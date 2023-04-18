@@ -1,0 +1,10 @@
+.container {
+    border: 5px solid #701a75;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between
+}
+
+.container > .home {
+    flex: 2
+}

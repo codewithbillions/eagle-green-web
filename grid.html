@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid one</title>
+
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 50% 50% ;
+            /* grid-column-gap: 1em;
+            grid-row-gap: 1em; */
+            grid-gap:1%
+        }
+
+        .container > div {
+            background-color: azure;
+            padding: 1em
+        }
+
+        .container > div:nth-child(1) {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe fugiat, similique dolorum ad autem dolores. Temporibus cum et eum libero!
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nesciunt consequuntur esse quaerat nihil earum fuga consectetur aliquid eligendi consequatur!
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit rerum ex nostrum vel sed sunt ipsam repudiandae doloribus exercitationem earum?
+        </div>
+        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, omnis deleniti voluptatum optio ex rem animi repudiandae culpa eos accusantium?</div>
+
+
+    </div>
+</body>
+</html>

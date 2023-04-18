@@ -1,0 +1,33 @@
+body {
+background-image: linear-gradient(#075985, #3b0764, #d97706);
+    font-family: 'Playfair Display', serif;
+}
+
+.myParaG {
+    font-size: 50px;
+    padding: 50px;
+    margin: 50px;
+    border: 5px dashed blue;
+    border-radius:  20px;
+}
+
+
+#myParaG {
+    background-color: blueviolet;
+}
+
+h2 {
+    border: 1px solid black
+}
+
+a{
+    display: block
+}
+
+/* syntax of css */
+/* selector {
+    property: value
+} */
+
+
+/* selector: tagname, selectorByClassName, selectorById */
