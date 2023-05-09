@@ -190,26 +190,88 @@
 // find the middle element 
 // if target is greater than middle element search left, if it is less search right!
 
-function binarySearch(arr, target) {
-    let leftIndex = 0;
-    let rightIndex = arr.length -1;
+// function binarySearch(arr, target) {
+//     let leftIndex = 0;
+//     let rightIndex = arr.length -1;
 
-    while(leftIndex <= rightIndex) {
-        let middleIndex = Math.floor((leftIndex +  rightIndex) / 2)
-        if(target === arr[middleIndex]) {
-            return middleIndex
-        }
-        if(target < arr[middleIndex]) {
-            rightIndex = middleIndex -1
-        } else {
-            leftIndex = middleIndex + 1
-        }
-    }
-    return "e no dey here"
-}
+//     while(leftIndex <= rightIndex) {
+//         let middleIndex = Math.floor((leftIndex +  rightIndex) / 2)
+//         if(target === arr[middleIndex]) {
+//             return middleIndex
+//         }
+//         if(target < arr[middleIndex]) {
+//             rightIndex = middleIndex -1
+//         } else {
+//             leftIndex = middleIndex + 1
+//         }
+//     }
+//     return "e no dey here"
+// }
 
-console.log(binarySearch([-5, 2, 4, 6, 10], 10))
-console.log(binarySearch([-5, 2, 4, 6, 10], 6))
-console.log(binarySearch([-5, 2, 4, 6, 10], 20))
+// console.log(binarySearch([-5, 2, 4, 6, 10], 10))
+// console.log(binarySearch([-5, 2, 4, 6, 10], 6))
+// console.log(binarySearch([-5, 2, 4, 6, 10], 20))
 
 // logarithimic- O(logn)
+
+// SORTING ALGORITHM
+// BUBBLE SORT
+// INSERTION SORT
+// QUICK SORT
+// MERGE SORT
+
+// BUBBLE SORT
+
+// PROBEM STATEMENT: Given an array of Integers Sort the array.
+// const arr = [-6, 20, 8, -2, 4]
+
+
+// bubbleSort(arr) => [-6, -2, 4, 8, 20]
+
+// Bubble Sort Idea.
+
+// compare adjacent element in the array and swap the positions if they are not in the intended order.
+
+// function bubbleSort(arr) {
+//     let swapped
+//     do {
+//         swapped = false
+//         for(let i = 0; i < arr.length -1; i++) {
+//         if (arr[i] > arr[i+1]) {
+//             let temp = arr[i]
+//             arr[i] = arr[i+1]
+//             arr[i+1] = temp
+//             swapped = true
+//         }
+//     }
+//     } while(swapped) 
+// }
+
+// const arr = [-6, 20, 8, -2, 4, 6, 10, 40, 62 ,101,]
+// bubbleSort(arr)
+// console.log(arr)
+
+// INSERT SORT
+// lets first understand the idea of the insertion Sort
+// with insertion sort you first split the array into sorted and unsorted part.
+// Assume that the first element is already sorted  and the remaining unsorted.
+// Select an unsorted element and compare with all the elements in the sorted part.
+// if the elements in the sorted part is smaller than the selected element, proceed to the next element in the unsorted part. Else, shift larger element in the sorted part towards the right.
+
+// const arr = [-6, 20, 8, -2, 4, 6, 10, 40, 62 ,101]
+
+function insertionSort(arr){
+    for(let i = 0; i < arr.length; i++) {
+        let numberToInsert = arr[i]
+        let j = i -1
+        while(j >= 0 && arr[j] > numberToInsert) {
+            arr[j+1] = arr[j]
+            j = j -1
+        }
+         arr[j+1] = numberToInsert
+    }
+}
+
+ const arr = [-6, 20, 8, -2, 4, 6, 10, 40, 62 ,101]
+ insertionSort(arr)
+ console.log(arr)
