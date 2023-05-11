@@ -260,18 +260,96 @@
 
 // const arr = [-6, 20, 8, -2, 4, 6, 10, 40, 62 ,101]
 
-function insertionSort(arr){
-    for(let i = 0; i < arr.length; i++) {
-        let numberToInsert = arr[i]
-        let j = i -1
-        while(j >= 0 && arr[j] > numberToInsert) {
-            arr[j+1] = arr[j]
-            j = j -1
-        }
-         arr[j+1] = numberToInsert
+// function insertionSort(arr){
+//     for(let i = 0; i < arr.length; i++) {
+//         let numberToInsert = arr[i]
+//         let j = i -1
+//         while(j >= 0 && arr[j] > numberToInsert) {
+//             arr[j+1] = arr[j]
+//             j = j -1
+//         }
+//          arr[j+1] = numberToInsert
+//     }
+// }
+
+//  const arr = [-6, 20, 8, -2, 4, 6, 10, 40, 62 ,101]
+//  insertionSort(arr)
+//  console.log(arr)
+// bigO is quadratic time complexity
+
+// QUICK SORT   
+
+// Problem: Given an array of integers, sort the array.
+
+// sorting can either be ascending or descending
+// const arr =[-6, -2, 4, 8, 20]
+// QuickSort(arr) => Should return [-6, -2, 4, 8, 20].
+
+
+// Quick sort idea
+// Identify the pivot element in the array
+// - pick the first element as a pivot
+// - pick the last element as a pivot
+// - pick a random element as a pivot
+// - pick median element as a pivot
+
+// function quickSort(arr) {
+//     if (arr.length < 2){
+//         return arr
+//     }
+
+//     let pivot = arr[arr.length -1];
+//     let left = []
+//     let right = []
+//     for (let i = 0; i < arr.length -1; i++) {
+//         if (arr[i] < pivot) {
+//             left.push(arr[i])
+//         } else {
+//             right.push(arr[i]);
+//         }
+//     }
+// return [...quickSort(left), pivot, ...quickSort(right)];
+// }
+
+// const arr = [8, 20, -2, 4, -6]
+// console.log(quickSort(arr))// [-6, -2, 4, 8, 20]
+// returns a sorted array.
+// bigO is O(n^2)
+// average case complexity is O(nlogn)
+
+// Merge SORT
+
+// Problem: Given an array of integers, sort the array.
+// sorting can either be ascending or descending
+// const arr =[-6, 20, 8, -2, 4]
+// MergeSort => Should return [-6, -2, 4, 8, 20].
+
+// Merge Sort idea
+// -divide the array into sub arrays, each containing only one element(An array with one element is considered sorted)
+// - repeatedly merge the sub arrays to produce new sorted sub-arrays until there is only one sub-array remaining. That will be the sorted array.
+
+function mergeSort(arr) {
+    if (arr.length < 2) {
+        return arr
     }
+    const mid = Math.floor(arr.length / 2)
+    const leftArr = arr.slice(0, mid)
+    const rightArr = arr.slice(mid)
+    return merge(mergeSort(leftArr), mergeSort(rightArr));
 }
 
- const arr = [-6, 20, 8, -2, 4, 6, 10, 40, 62 ,101]
- insertionSort(arr)
- console.log(arr)
+function merge(leftArr, rightArr) {
+    const sortedArr = []
+
+    while(leftArr.length && rightArr.length) {
+        if(leftArr[0] <= rightArr[0]) {
+            sortedArr.push(leftArr.shift())
+        } else {
+            sortedArr.push(rightArr.shift())
+        }
+    }
+    return [...sortedArr, ...leftArr, ...rightArr]
+}
+
+const arr = [8, 20, -2, 4, -6]
+console.log(mergeSort(arr))// [-6, -2, 4, 8, 20]
