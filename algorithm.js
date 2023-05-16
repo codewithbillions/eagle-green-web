@@ -328,28 +328,100 @@
 // -divide the array into sub arrays, each containing only one element(An array with one element is considered sorted)
 // - repeatedly merge the sub arrays to produce new sorted sub-arrays until there is only one sub-array remaining. That will be the sorted array.
 
-function mergeSort(arr) {
-    if (arr.length < 2) {
-        return arr
-    }
-    const mid = Math.floor(arr.length / 2)
-    const leftArr = arr.slice(0, mid)
-    const rightArr = arr.slice(mid)
-    return merge(mergeSort(leftArr), mergeSort(rightArr));
-}
+// function mergeSort(arr) {
+//     if (arr.length < 2) {
+//         return arr
+//     }
+//     const mid = Math.floor(arr.length / 2)
+//     const leftArr = arr.slice(0, mid)
+//     const rightArr = arr.slice(mid)
+//     return merge(mergeSort(leftArr), mergeSort(rightArr));
+// }
 
-function merge(leftArr, rightArr) {
-    const sortedArr = []
+// function merge(leftArr, rightArr) {
+//     const sortedArr = []
 
-    while(leftArr.length && rightArr.length) {
-        if(leftArr[0] <= rightArr[0]) {
-            sortedArr.push(leftArr.shift())
-        } else {
-            sortedArr.push(rightArr.shift())
-        }
-    }
-    return [...sortedArr, ...leftArr, ...rightArr]
-}
+//     while(leftArr.length && rightArr.length) {
+//         if(leftArr[0] <= rightArr[0]) {
+//             sortedArr.push(leftArr.shift())
+//         } else {
+//             sortedArr.push(rightArr.shift())
+//         }
+//     }
+//     return [...sortedArr, ...leftArr, ...rightArr]
+// }
 
-const arr = [8, 20, -2, 4, -6]
-console.log(mergeSort(arr))// [-6, -2, 4, 8, 20]
+// const arr = [8, 20, -2, 4, -6]
+// console.log(mergeSort(arr))// [-6, -2, 4, 8, 20]
+//
+//
+// >>>>>>>>>> FIBONACCI SEQUENCE
+// problem _ Given a number 'n', find the 'n' element of the Fibonacci sequence.
+// {0,1,1,2,3,5,8,13,21,34,55,55+34=89,89+55=144,⋯}
+
+// The first two numbers in the sequence are 0 and 1.
+// fibonacci[2] = [0,1]
+// fibonacci[3] = [0,1,1]
+// fibonacci[7] = [0,1,1,2,3,5,8]
+
+// function fibonacci(n) {
+//     const fib = [0, 1]
+//     for(let i = 2; i < n; i++) {
+//         fib[i] = fib[i-1 ] + fib[i-2]
+//     }
+//     return fib
+// }
+
+// console.log(fibonacci(2))
+// console.log(fibonacci(3))
+// console.log(fibonacci(100))
+
+// as the number increases the times line 235 will run will also increases
+
+// RECURSION
+// Recursion is a problem solving technique where the solution depends on solutions to smaller instances of the same problem.
+
+// problem question: Given the number 'n', find the nth element of the fibonacci sequence.
+
+// Rather than the entire sequence we are only interested in the number present at a certain position in the sequence.
+
+// recursiveFibonacci(0) = 0
+// recursiveFibonacci(1) = 1
+// recursiveFibonacci(6) = 8
+
+// F represent a function to calculate the fibonacci sequence
+
+// Fn = Fn-1 + Fn -2
+// what is F2? F2 = F1 + F0
+// what is F1? F1 = F1 + F0 = 1
+
+// function recursiveFibonacci(n) {
+//     if(n < 2) {
+//         return n
+//     }
+//  return recursiveFibonacci(n-1) + recursiveFibonacci(n -2)
+// }
+
+// console.log(recursiveFibonacci(0)) // 0
+// console.log(recursiveFibonacci(1))//  1
+// console.log(recursiveFibonacci(6))//  8
+
+// recursive Factorial
+// problem: given an integer 'n', find the factoral of that integer
+
+
+// factorial(4) = 4*3*2*1 = 24
+// factorial(5)= 5*4*3*2*1 = 120
+
+// function recursiveFactorial(n) {
+//     if (n === 0) {
+//         return 1
+//     }
+//     return n * recursiveFactorial(n - 1)
+// }
+
+// console.log(recursiveFactorial(0))
+// console.log(recursiveFactorial(4))
+// console.log(recursiveFactorial(5))
+
+
