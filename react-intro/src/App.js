@@ -11,9 +11,12 @@ function App() {
     <div className="App">
       
       <Navmenu />
+      <About />
+      <Aboutc />
      <Card1 myName="marvellous" school="gomycode"/>
    <Caro />
 
+      
 
     </div>
   );
