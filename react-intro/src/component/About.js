@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 const  Banner = ({purpose}) => (
   <div>{purpose}</div>
@@ -6,6 +6,7 @@ const  Banner = ({purpose}) => (
 
 function About () {
   const [firstName, setfirstName] = useState("papa")
+  const [company, setcompany] = useState ("gomycode")
 
     return (
         <div>
@@ -15,7 +16,7 @@ function About () {
          <Banner purpose={'For School'} />
 
 
-
+          <button onClick={() => setcompany("Apple")}>{company}</button>
          <button onClick={()=> setfirstName("olalekan AKA onyebuchi")}>{firstName}</button>
           
         </div>
